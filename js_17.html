@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>在线简历</title>
+    <style>
+        body{
+            padding:30px 250px; 
+        }
+        .container{
+            border:10px solid #2F416D;
+            border-radius:5px;
+            padding: 10px 30px;
+        }
+        .tit{
+            width:400px;
+            text-align:left;
+            font-size:30px;
+        }
+        .job{
+            width:400px;
+            text-align:right;
+            font-size:20px;
+        }
+        .tit1,.tit2,.tit3,.tit4{
+            background-color:#3366aa;
+            border-radius:5px;
+            color:white;
+            text-align:center;
+            font-size:20px;
+            font-family:Times New Roman;
+            padding:3px auto;
+        } 
+        .content1,.content2,.content3,.content4{
+            padding:3px;
+            line-height:30px;
+        }
+        td{
+            width:266px;
+            text-align:center;
+            padding:0;
+            font-weight:bold;
+        }
+        .photo{
+            float:right;
+            padding-top:20px;
+            padding-right:40px;
+        }
+        .content1 p{
+            padding-left:20px;
+        }
+        a{
+            text-decoration:none;
+            color:black;
+        }
+        a:hover{
+            color:blue;
+            text-decoration:underline;
+        }
+        .content2 ul,.content3 ul,.conteent4 ul{
+            list-style-type:square;
+        }
+        #btn {
+            background: white;
+            margin-left: 20px;
+            color: #3366aa;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <tr>
+          <td class="tit">个人简历</td>
+          <td class="job">求职意向：web开发工程师</td>
+        </tr>
+       </table>
+     <div class="tit1">基本信息</div>
+     <div class="content1">
+       <img class="photo" id="photo" src="http://a2.att.hudong.com/74/73/01300543453388144152731911410.jpg" width=80px height=120px>
+       <p><a id="name">姓名：张三<a><br>
+       电话：188xxxxxxxx<br>
+       邮箱：<a href="#">188xxxxxxx@163.com</a><!--#代表当前页面--><br>
+       住址：北京市海淀区</p>
+     </div>
+     <div class="tit2">教育背景</div>
+     <div class="content2">
+      <table>
+        <tr>
+          <td>2015.09-2019.06</td>
+          <td>北京xx 大学</td>
+          <td>xxxx专业</td>
+        </tr>
+      </table>
+      <ul><li>主修课程：高等数学、线性代数、近代史、中国特色社会主义思想、java、python、C语言、C++、大学英语</li></ul>
+     </div>
+     <div class="tit3">项目经历</div>
+     <div class="content3">
+      <table>
+        <tr>
+          <td>2017.06 - 2017.07</td>
+          <td>网络静态页面的设计</td>
+          <td>项目负责人</td>
+        </tr>
+      </table>
+      <ul>
+        <li>使用HTML编写网络商城静态页面，页面包括插入图片、超链接、登录表单等功能；</li>
+        <li>编写调试200+行核心代码，撰写10页设计报告。</li>
+      </ul>
+      <table>
+        <tr>
+          <td>2018.02</td>
+          <td>图书馆系统的设计</td>
+          <td>项目负责人</td>
+        </tr>
+      </table>
+      <ul>
+        <li>使用Python语言完成查询系统的设计；</li>
+        <li>利用Python中的tkinter模块实现设计界面的显示与交互功能；利用Python的pymysql模块完成Python与数据库MySQL的连接，实现系统的增加、删除、修改、单项查询和组合查询等功能。 </li>
+      </ul>
+     </div>
+     <div class="tit4">个人技能</div>
+     <div class="content4">
+      <ul>
+        <li>语言技能：英语CET6<b id="score"> </b><button id="btn">查看分数</button></li>
+        <li>专业技能：熟悉MATLAB、Python、java等编程语言</li>
+        <li>办公技能：熟悉office办公软件</li>
+      </ul>
+     </div>
+    </div>
+    <script>
+        var hour = new Date().getHours();
+        var time;
+        document.getElementById("btn").onclick = function () {
+            document.getElementById("score").innerHTML = "(600分)";
+        }
+        document.getElementById("photo").onclick = function () {
+            if(hour>6 && hour< 12){time = "上午好";}
+            else if(hour>=12 && hour<=18){time = "下午好";}
+            else{time = "晚上好";}
+            document.getElementById("name").innerHTML = time + ",我是张三！";
+        }
+    </script>
+  </body>
+</html>

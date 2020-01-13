@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" placeholder="第一个数字">
+    <input id="second-number" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        var x = document.getElementById("first-number");
+        var y = document.getElementById("second-number");
+        document.getElementById("add-btn").onclick = function() {
+            document.getElementById("result").innerHTML = Number(x.value) + Number(y.value);
+            try {
+                if(isNaN(x.value) || isNaN(y.value)) throw "不是数字类型";
+            }
+            catch(err) {
+                document.getElementById("result").innerHTML = "错误：" + err + "。";
+            }
+        }
+        document.getElementById("minus-btn").onclick = function() {
+            document.getElementById("result").innerHTML = x.value - y.value;
+            try {
+                if(isNaN(x.value) || isNaN(y.value)) throw "不是数字类型";
+            }
+            catch(err) {
+                document.getElementById("result").innerHTML = "错误：" + err + "。";
+            }
+        }
+        document.getElementById("times-btn").onclick = function() {
+            document.getElementById("result").innerHTML = x.value * y.value;
+            try {
+                if(isNaN(x.value) || isNaN(y.value)) throw "不是数字类型";
+            }
+            catch(err) {
+                document.getElementById("result").innerHTML = "错误：" + err + "。";
+            }
+        }
+        document.getElementById("divide-btn").onclick = function() {
+            document.getElementById("result").innerHTML = x.value / y.value;
+            try {
+                if(isNaN(x.value) || isNaN(y.value)) throw "不是数字类型";
+                if(y.value == 0) throw "除数不能为0";
+            }
+            catch(err) {
+                document.getElementById("result").innerHTML = "错误：" + err + "。";
+            }
+        }
+    </script>
+</body>
+</html>
